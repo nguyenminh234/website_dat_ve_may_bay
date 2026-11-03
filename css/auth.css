@@ -1,0 +1,267 @@
+/* =====================================================
+   TRANG ĐĂNG NHẬP / ĐĂNG KÝ
+   Dùng lại biến màu (:root), .btn, .logo, .field từ style.css
+   ===================================================== */
+
+/* Nền gradient, căn card ra giữa màn hình bằng Flexbox */
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: linear-gradient(135deg, #0b5ed7 0%, #3b9bff 60%, #7cc4ff 100%);
+}
+
+/* Card chính: chia 2 cột bằng CSS Grid */
+.auth {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  width: 100%;
+  max-width: 960px;
+  background: #fff;
+  border-radius: 24px;
+  overflow: hidden; /* bo góc cho cả hai cột */
+  box-shadow: var(--shadow-hover);
+}
+
+/* ---------- Cột trái: thương hiệu ---------- */
+.auth__brand {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 32px;
+  padding: 40px 36px;
+  color: #fff;
+  background: linear-gradient(160deg, #084298, #0b5ed7);
+}
+
+.auth__brand-title {
+  font-size: 1.7rem;
+  line-height: 1.3;
+}
+
+.auth__perks li {
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+  opacity: 0.95;
+}
+
+/* ---------- Cột phải ---------- */
+.auth__box {
+  padding: 40px 40px 32px;
+}
+
+/* Nút quay lại trang chủ */
+.back-home {
+  /* fixed: cố định theo khung trình duyệt, nằm ở góc trên bên trái màn hình */
+  position: fixed;
+  top: 24px;
+  left: 24px;
+  z-index: 10;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.18); /* nền trắng mờ trên nền xanh */
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.25s ease;
+}
+/* Hover: nền trắng, chữ xanh, nhích sang trái như đang "quay lại" */
+.back-home:hover {
+  background: #fff;
+  color: var(--color-primary);
+  transform: translateX(-4px);
+}
+
+/* Ẩn 2 nút radio, dùng label làm tab */
+.auth-radio {
+  display: none;
+}
+
+/* Thanh tab Đăng nhập / Đăng ký */
+.auth-tabs {
+  display: flex;
+  background: var(--color-bg-gray);
+  border-radius: 999px;
+  padding: 4px;
+  margin-bottom: 28px;
+}
+
+.auth-tabs__item {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+.auth-tabs__item:hover {
+  color: var(--color-primary);
+}
+
+/* Tab đang được chọn → nền xanh, chữ trắng */
+#tab-login:checked ~ .auth-tabs label[for="tab-login"],
+#tab-register:checked ~ .auth-tabs label[for="tab-register"] {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+/* ---------- Ẩn / hiện form theo tab đang chọn ---------- */
+/* Viết 2 class liền nhau để độ ưu tiên cao hơn .auth-form { display: flex }
+   (nếu không, quy tắc nằm phía sau sẽ đè và form đăng ký luôn hiện) */
+.auth-form.auth-form--register { display: none; }
+
+#tab-register:checked ~ .auth-panels .auth-form--login    { display: none; }
+#tab-register:checked ~ .auth-panels .auth-form--register { display: flex; }
+
+/* ---------- Form ---------- */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.auth-form__title {
+  font-size: 1.5rem;
+}
+
+.auth-form__desc {
+  color: var(--color-muted);
+  margin-top: -8px;
+  font-size: 0.95rem;
+}
+
+/* 2 ô nằm cạnh nhau (đăng ký) */
+.auth-form__two-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+/* Hàng "Ghi nhớ" và "Quên mật khẩu" */
+.auth-form__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 0.9rem;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+.checkbox input {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--color-primary); /* đổi màu ô tích */
+}
+
+.auth-form__submit {
+  width: 100%;
+  padding: 14px;
+  font-size: 1.05rem;
+}
+
+/* Liên kết xanh dùng chung */
+.auth-link {
+  color: var(--color-primary);
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.auth-link:hover {
+  color: var(--color-accent);
+}
+
+.auth-form__switch {
+  text-align: center;
+  font-size: 0.95rem;
+  color: var(--color-muted);
+}
+
+/* Đường kẻ "hoặc": dùng ::before và ::after để vẽ 2 vạch hai bên chữ */
+.auth-form__divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--color-muted);
+  font-size: 0.85rem;
+}
+.auth-form__divider::before,
+.auth-form__divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #d6dde8;
+}
+
+/* Nút đăng nhập mạng xã hội */
+.social {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.social__btn {
+  padding: 11px;
+  border: 1.5px solid #d6dde8;
+  border-radius: 10px;
+  background: #fff;
+  font-family: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.social__btn:hover {
+  border-color: var(--color-primary);
+  background: var(--color-bg-gray);
+}
+
+/* Báo lỗi bằng viền đỏ khi ô đã nhập nhưng sai định dạng */
+.field__input:not(:placeholder-shown):invalid {
+  border-color: #dc3545;
+}
+.field__input:not(:placeholder-shown):valid {
+  border-color: #28a745;
+}
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+
+/* Máy tính bảng và điện thoại: ẩn cột trái, form chiếm toàn bộ */
+@media (max-width: 800px) {
+  /* Chừa chỗ phía trên để nút "Quay lại" không đè lên form */
+  .auth-page {
+    padding-top: 80px;
+  }
+  .back-home {
+    top: 16px;
+    left: 16px;
+  }
+  .auth {
+    grid-template-columns: 1fr;
+    max-width: 520px;
+  }
+  .auth__brand {
+    display: none;
+  }
+}
+
+/* Điện thoại nhỏ: thu gọn khoảng cách, các ô xếp 1 cột */
+@media (max-width: 480px) {
+  .auth-page { padding: 12px; }
+  .auth__box { padding: 28px 20px 24px; }
+  .auth-form__two-cols,
+  .social { grid-template-columns: 1fr; }
+  .auth-form__row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

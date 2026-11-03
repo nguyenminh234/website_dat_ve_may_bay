@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chi tiết ưu đãi | SkyBooking</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- style.css: dùng lại biến màu, header, nút bấm, footer của trang chủ -->
+  <link rel="stylesheet" href="../css/style.css">
+  <!-- deals.css: CSS riêng cho trang chi tiết ưu đãi -->
+  <link rel="stylesheet" href="../css/deals.css">
+</head>
+
+<body>
+
+  <!-- ================= HEADER (giống trang chủ) ================= -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="index.html" class="logo">✈ Sky<span>Booking</span></a>
+
+      <nav class="nav">
+        <ul class="nav__list">
+          <li><a href="index.html#tim-chuyen-bay" class="nav__link">Đặt vé</a></li>
+          <li><a href="index.html#diem-den" class="nav__link">Điểm đến</a></li>
+          <li><a href="index.html#uu-dai" class="nav__link">Ưu đãi</a></li>
+          <li><a href="index.html#vi-sao" class="nav__link">Về chúng tôi</a></li>
+        </ul>
+      </nav>
+
+      <a href="auth.html" class="btn btn--outline header__login">Đăng nhập</a>
+    </div>
+  </header>
+
+  <!--
+    Class "deals-page" bao quanh toàn bộ nội dung.
+    CSS dùng :target (phần tử có id trùng với #... trên thanh địa chỉ)
+    để chỉ hiện đúng một ưu đãi, không cần JavaScript.
+  -->
+  <main class="deals-page">
+
+    <!-- ===== Banner đầu trang ===== -->
+    <section class="deals-hero">
+      <div class="container">
+        <h1 class="deals-hero__title">Ưu đãi dành riêng cho bạn</h1>
+        <p class="deals-hero__desc">Xem rõ vì sao chúng tôi giảm giá, bạn tiết kiệm được bao nhiêu và cách nhận ưu đãi chỉ trong 3 bước.</p>
+      </div>
+    </section>
+
+    <!-- ===== Thanh chuyển giữa 3 ưu đãi ===== -->
+    <nav class="deal-tabs container" aria-label="Chọn ưu đãi">
+      <a href="#mua-he" class="deal-tabs__item">☀ Mùa hè rực rỡ</a>
+      <a href="#quoc-te" class="deal-tabs__item">🌏 Bay quốc tế</a>
+      <a href="#hanh-ly" class="deal-tabs__item">🧳 Hành lý miễn phí</a>
+    </nav>
+
+    <div class="container deal-panels">
+
+      <!-- =====================================================
+           ƯU ĐÃI 1: MÙA HÈ RỰC RỠ
+           ===================================================== -->
+      <article class="deal-detail" id="mua-he">
+
+        <header class="deal-detail__head deal-detail__head--summer">
+          <span class="deal-detail__badge">-20%</span>
+          <h2 class="deal-detail__title">Mùa hè rực rỡ</h2>
+          <p class="deal-detail__lead">Giảm 20% cho tất cả chuyến bay nội địa khi đặt trước 30 ngày.</p>
+          <ul class="deal-detail__highlights">
+            <li>✔ Mọi chặng nội địa</li>
+            <li>✔ Đặt trước 30 ngày</li>
+            <li>✔ Giảm trực tiếp khi thanh toán</li>
+          </ul>
+        </header>
+
+        <!-- Lý do được giảm giá -->
+        <section class="deal-block">
+          <h3 class="deal-block__title">Vì sao chúng tôi giảm giá?</h3>
+          <div class="reason-grid">
+            <div class="reason">
+              <div class="reason__icon">🗓</div>
+              <h4 class="reason__title">Hãng bay cần chốt kế hoạch sớm</h4>
+              <p class="reason__text">Khi bạn đặt trước 30 ngày, hãng biết trước nhu cầu để sắp xếp chuyến bay và lấp đầy ghế. Phần lợi đó được chia lại cho bạn dưới dạng giá tốt hơn.</p>
+            </div>
+            <div class="reason">
+              <div class="reason__icon">🌴</div>
+              <h4 class="reason__title">Kích cầu mùa du lịch</h4>
+              <p class="reason__text">Mùa hè là mùa cao điểm, giá vé càng sát ngày bay càng đắt. Giảm giá giúp bạn đi sớm hơn, thoải mái hơn và không phải trả giá "chốt đơn" phút chót.</p>
+            </div>
+            <div class="reason">
+              <div class="reason__icon">🤝</div>
+              <h4 class="reason__title">Hợp tác trực tiếp với hãng</h4>
+              <p class="reason__text">SkyBooking làm việc trực tiếp với các hãng bay, nên có thể chuyển mức giá ưu đãi đến tay bạn mà không qua nhiều khâu trung gian.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Ví dụ tiết kiệm -->
+        <section class="deal-block">
+          <h3 class="deal-block__title">Bạn tiết kiệm được bao nhiêu?</h3>
+          <div class="saving">
+            <p class="saving__route">Ví dụ: TP. Hồ Chí Minh → Hà Nội (1 chiều, 1 người lớn)</p>
+            <div class="saving__row">
+              <div class="saving__item">
+                <span class="saving__label">Giá thường</span>
+                <span class="saving__old">1.500.000đ</span>
+              </div>
+              <div class="saving__arrow">→</div>
+              <div class="saving__item saving__item--new">
+                <span class="saving__label">Giá ưu đãi</span>
+                <span class="saving__new">1.200.000đ</span>
+              </div>
+            </div>
+            <p class="saving__total">Tiết kiệm <strong>300.000đ</strong> mỗi vé. Gia đình 4 người tiết kiệm <strong>1.200.000đ</strong>!</p>
+          </div>
+          <p class="deal-note">* Số liệu minh họa. Giá thực tế thay đổi theo ngày bay và hãng bay.</p>
+        </section>
+
+        <!-- Điều kiện + Các bước -->
+        <div class="deal-two-cols">
+          <section class="deal-block">
+            <h3 class="deal-block__title">Điều kiện áp dụng</h3>
+            <ul class="check-list">
+              <li>Chuyến bay nội địa, đặt trước ngày bay ít nhất 30 ngày.</li>
+              <li>Áp dụng cho hạng Phổ thông.</li>
+              <li>Thanh toán thành công trên SkyBooking.</li>
+              <li>Mỗi tài khoản đặt tối đa 4 vé cho một hành trình.</li>
+            </ul>
+          </section>
+
+          <section class="deal-block">
+            <h3 class="deal-block__title">Cách nhận ưu đãi</h3>
+            <ol class="step-list">
+              <li><strong>Đăng ký / đăng nhập</strong> tài khoản SkyBooking.</li>
+              <li><strong>Chọn chuyến bay</strong> khởi hành sau hơn 30 ngày.</li>
+              <li><strong>Thanh toán</strong> – mức giảm 20% được trừ tự động.</li>
+            </ol>
+          </section>
+        </div>
+
+        <!-- Câu hỏi thường gặp: thẻ <details> tự mở/đóng, không cần JavaScript -->
+        <section class="deal-block">
+          <h3 class="deal-block__title">Câu hỏi thường gặp</h3>
+          <details class="faq">
+            <summary class="faq__question">Tôi có cần nhập mã giảm giá không?</summary>
+            <p class="faq__answer">Không. Nếu chuyến bay đủ điều kiện, hệ thống tự áp dụng mức giảm khi bạn thanh toán.</p>
+          </details>
+          <details class="faq">
+            <summary class="faq__question">Có thể dùng chung với ưu đãi khác không?</summary>
+            <p class="faq__answer">Ưu đãi này có thể áp dụng cùng quà tặng dành cho thành viên mới, như hành lý miễn phí.</p>
+          </details>
+        </section>
+      </article>
+
+      <!-- =====================================================
+           ƯU ĐÃI 2: BAY QUỐC TẾ
+           ===================================================== -->
+      <article class="deal-detail" id="quoc-te">
+
+        <header class="deal-detail__head deal-detail__head--international">
+          <span class="deal-detail__badge">-500K</span>
+          <h2 class="deal-detail__title">Bay quốc tế</h2>
+          <p class="deal-detail__lead">Giảm ngay 500.000đ cho vé khứ hồi đi Đông Nam Á.</p>
+          <ul class="deal-detail__highlights">
+            <li>✔ Vé khứ hồi</li>
+            <li>✔ Các thành phố Đông Nam Á</li>
+            <li>✔ Giảm thẳng vào tổng tiền</li>
+          </ul>
+        </header>
+
+        <section class="deal-block">
+          <h3 class="deal-block__title">Vì sao chúng tôi giảm giá?</h3>
+          <div class="reason-grid">
+            <div class="reason">
+              <div class="reason__icon">🔁</div>
+              <h4 class="reason__title">Vé khứ hồi giúp hãng giữ chắc 2 chiều</h4>
+              <p class="reason__text">Khi bạn mua cả chiều đi và chiều về, hãng bay có thể lấp đầy ghế ở cả hai chặng. Vì vậy chúng tôi giảm thêm cho vé khứ hồi.</p>
+            </div>
+            <div class="reason">
+              <div class="reason__icon">🌏</div>
+              <h4 class="reason__title">Đông Nam Á gần, nhu cầu lớn</h4>
+              <p class="reason__text">Các chặng như Bangkok, Singapore, Kuala Lumpur chỉ mất vài giờ bay. Chúng tôi muốn việc đi nước ngoài trở nên dễ dàng như đi một chuyến nội địa.</p>
+            </div>
+            <div class="reason">
+              <div class="reason__icon">💸</div>
+              <h4 class="reason__title">Giảm cố định, dễ hiểu</h4>
+              <p class="reason__text">Không phần trăm rắc rối: bạn được giảm đúng 500.000đ trên tổng tiền vé khứ hồi, đủ chi trả một bữa ăn ngon hoặc vé tham quan tại điểm đến.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="deal-block">
+          <h3 class="deal-block__title">Bạn tiết kiệm được bao nhiêu?</h3>
+          <div class="saving">
+            <p class="saving__route">Ví dụ: TP. Hồ Chí Minh ⇄ Bangkok (khứ hồi, 1 người lớn)</p>
+            <div class="saving__row">
+              <div class="saving__item">
+                <span class="saving__label">Giá thường</span>
+                <span class="saving__old">4.500.000đ</span>
+              </div>
+              <div class="saving__arrow">→</div>
+              <div class="saving__item saving__item--new">
+                <span class="saving__label">Giá ưu đãi</span>
+                <span class="saving__new">4.000.000đ</span>
+              </div>
+            </div>
+            <p class="saving__total">Tiết kiệm <strong>500.000đ</strong>. Đi 2 người tiết kiệm <strong>1.000.000đ</strong>!</p>
+          </div>
+          <p class="deal-note">* Số liệu minh họa. Giá thực tế thay đổi theo ngày bay và hãng bay.</p>
+        </section>
+
+        <div class="deal-two-cols">
+          <section class="deal-block">
+            <h3 class="deal-block__title">Điều kiện áp dụng</h3>
+            <ul class="check-list">
+              <li>Vé khứ hồi từ Việt Nam đến các thành phố Đông Nam Á.</li>
+              <li>Giảm 500.000đ cho mỗi hành khách người lớn.</li>
+              <li>Đặt và thanh toán trên SkyBooking.</li>
+              <li>Hộ chiếu còn hạn theo quy định của nước đến.</li>
+            </ul>
+          </section>
+
+          <section class="deal-block">
+            <h3 class="deal-block__title">Cách nhận ưu đãi</h3>
+            <ol class="step-list">
+              <li><strong>Đăng ký / đăng nhập</strong> tài khoản SkyBooking.</li>
+              <li><strong>Tìm chuyến bay</strong>, chọn "Khứ hồi" và điểm đến Đông Nam Á.</li>
+              <li><strong>Thanh toán</strong> – 500.000đ được trừ tự động.</li>
+            </ol>
+          </section>
+        </div>
+
+        <section class="deal-block">
+          <h3 class="deal-block__title">Câu hỏi thường gặp</h3>
+          <details class="faq">
+            <summary class="faq__question">Vé một chiều có được giảm không?</summary>
+            <p class="faq__answer">Ưu đãi chỉ áp dụng cho vé khứ hồi. Với vé một chiều, bạn có thể xem thêm ưu đãi "Mùa hè rực rỡ" cho chặng nội địa.</p>
+          </details>
+          <details class="faq">
+            <summary class="faq__question">Những nước nào thuộc Đông Nam Á?</summary>
+            <p class="faq__answer">Gồm Thái Lan, Singapore, Malaysia, Indonesia, Campuchia và các điểm đến khác trong khu vực mà SkyBooking khai thác.</p>
+          </details>
+        </section>
+      </article>
+
+      <!-- =====================================================
+           ƯU ĐÃI 3: HÀNH LÝ MIỄN PHÍ
+           ===================================================== -->
+      <article class="deal-detail" id="hanh-ly">
+
+        <header class="deal-detail__head deal-detail__head--baggage">
+          <span class="deal-detail__badge">Free</span>
+          <h2 class="deal-detail__title">Hành lý miễn phí</h2>
+          <p class="deal-detail__lead">Tặng thêm 20kg hành lý ký gửi cho thành viên mới.</p>
+          <ul class="deal-detail__highlights">
+            <li>✔ Thêm 20kg ký gửi</li>
+            <li>✔ Dành cho thành viên mới</li>
+            <li>✔ Đăng ký là có ngay</li>
+          </ul>
+        </header>
+
+        <section class="deal-block">
+          <h3 class="deal-block__title">Vì sao chúng tôi tặng ưu đãi này?</h3>
+          <div class="reason-grid">
+            <div class="reason">
+              <div class="reason__icon">🎁</div>
+              <h4 class="reason__title">Quà chào mừng thành viên mới</h4>
+              <p class="reason__text">Chúng tôi muốn cảm ơn bạn đã chọn SkyBooking cho chuyến bay đầu tiên, nên tặng ngay một phần quà thiết thực.</p>
+            </div>
+            <div class="reason">
+              <div class="reason__icon">🧳</div>
+              <h4 class="reason__title">Hành lý là khoản phát sinh quen thuộc</h4>
+              <p class="reason__text">Nhiều hãng bay giá rẻ tính phí hành lý riêng, khiến tổng tiền cuối cùng cao hơn dự kiến. Ưu đãi này giúp chuyến đi của bạn bớt "phát sinh" hơn.</p>
+            </div>
+            <div class="reason">
+              <div class="reason__icon">✨</div>
+              <h4 class="reason__title">Trải nghiệm đầu tiên trọn vẹn</h4>
+              <p class="reason__text">Đi du lịch, đi công tác hay về quê, bạn đều có thêm chỗ cho quà biếu, đồ mua sắm mà không phải cân nhắc từng ký.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="deal-block">
+          <h3 class="deal-block__title">Bạn tiết kiệm được bao nhiêu?</h3>
+          <div class="saving">
+            <p class="saving__route">Ví dụ: mua thêm 20kg hành lý ký gửi cho chuyến khứ hồi</p>
+            <div class="saving__row">
+              <div class="saving__item">
+                <span class="saving__label">Phí mua thêm (ví dụ)</span>
+                <span class="saving__old">400.000đ</span>
+              </div>
+              <div class="saving__arrow">→</div>
+              <div class="saving__item saving__item--new">
+                <span class="saving__label">Với ưu đãi</span>
+                <span class="saving__new">0đ</span>
+              </div>
+            </div>
+            <p class="saving__total">Bạn tiết kiệm <strong>toàn bộ phí hành lý</strong> cho chuyến bay đầu tiên!</p>
+          </div>
+          <p class="deal-note">* Số liệu minh họa. Phí hành lý thực tế tùy hãng bay và chặng bay.</p>
+        </section>
+
+        <div class="deal-two-cols">
+          <section class="deal-block">
+            <h3 class="deal-block__title">Điều kiện áp dụng</h3>
+            <ul class="check-list">
+              <li>Dành cho tài khoản mới đăng ký tại SkyBooking.</li>
+              <li>Áp dụng cho chuyến bay đầu tiên đặt bằng tài khoản đó.</li>
+              <li>Cộng thêm 20kg vào mức hành lý ký gửi của vé.</li>
+              <li>Mỗi tài khoản nhận ưu đãi một lần.</li>
+            </ul>
+          </section>
+
+          <section class="deal-block">
+            <h3 class="deal-block__title">Cách nhận ưu đãi</h3>
+            <ol class="step-list">
+              <li><strong>Đăng ký tài khoản</strong> SkyBooking miễn phí.</li>
+              <li><strong>Đặt chuyến bay</strong> đầu tiên của bạn.</li>
+              <li><strong>Nhận vé</strong> – 20kg hành lý được cộng sẵn trong vé điện tử.</li>
+            </ol>
+          </section>
+        </div>
+
+        <section class="deal-block">
+          <h3 class="deal-block__title">Câu hỏi thường gặp</h3>
+          <details class="faq">
+            <summary class="faq__question">Tôi đã có tài khoản thì có được nhận không?</summary>
+            <p class="faq__answer">Ưu đãi này dành riêng cho thành viên mới. Với tài khoản cũ, bạn có thể nhận ưu đãi "Mùa hè rực rỡ" hoặc "Bay quốc tế".</p>
+          </details>
+          <details class="faq">
+            <summary class="faq__question">20kg này cộng thêm hay thay thế hành lý sẵn có?</summary>
+            <p class="faq__answer">Cộng thêm. Bạn vẫn giữ hành lý theo hạng vé và được tặng thêm 20kg ký gửi.</p>
+          </details>
+        </section>
+      </article>
+
+    </div>
+
+    <!-- =====================================================
+         KÊU GỌI HÀNH ĐỘNG: dẫn đến form đăng nhập / đăng ký
+         (nằm dưới phần giải thích, luôn hiện với cả 3 ưu đãi)
+         ===================================================== -->
+    <section class="deal-cta">
+      <div class="container deal-cta__inner">
+        <h2 class="deal-cta__title">Sẵn sàng bay với giá tốt hơn?</h2>
+        <p class="deal-cta__text">Đăng ký tài khoản miễn phí chỉ mất chưa đến 1 phút để nhận ưu đãi. Đã có tài khoản? Đăng nhập và đặt vé ngay.</p>
+        <div class="deal-cta__buttons">
+          <!-- Cả hai nút dẫn đến auth.html, nơi có form đăng nhập và đăng ký -->
+          <a href="../html/auth.html" class="btn btn--accent deal-cta__btn">Đăng ký miễn phí</a>
+          <a href="../html/auth.html" class="btn btn--light deal-cta__btn">Đăng nhập</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <p class="footer__copy footer__copy--only">© 2026 SkyBooking. Đây là website mẫu phục vụ học tập, các mức giá và điều kiện chỉ mang tính minh họa.</p>
+  </footer>
+
+</body>
+
+</html>

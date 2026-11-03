@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<!-- Khai báo tài liệu HTML5, ngôn ngữ tiếng Việt -->
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- Giúp trang hiển thị đúng tỷ lệ trên điện thoại (bắt buộc cho responsive) -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SkyBooking - Đặt vé máy bay giá rẻ, nhanh chóng và an toàn">
+  <link rel="icon" type="image/png" href="../image/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="../image/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="../image/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../image/favicon/apple-touch-icon.png" />
+  <link rel="manifest" href="../image/favicon/site.webmanifest" />
+  <title>SkyBooking | Đặt vé máy bay giá rẻ</title>
+
+  <!-- Font chữ Poppins từ Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Liên kết file CSS (cùng thư mục với index.html) -->
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+  <!-- ================= HEADER: Logo + Menu ================= -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="#" class="logo">✈ Sky<span>Booking</span></a>
+
+      <nav class="nav">
+        <ul class="nav__list">
+          <li><a href="#tim-chuyen-bay" class="nav__link">Đặt vé</a></li>
+          <li><a href="#diem-den" class="nav__link">Điểm đến</a></li>
+          <li><a href="#uu-dai" class="nav__link">Ưu đãi</a></li>
+          <li><a href="#vi-sao" class="nav__link">Về chúng tôi</a></li>
+        </ul>
+      </nav>
+
+      <a href="auth.html" class="btn btn--outline header__login">Đăng nhập</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ================= HERO: Tiêu đề + Form tìm chuyến bay ================= -->
+    <section class="hero" id="tim-chuyen-bay">
+      <div class="container">
+        <div class="hero__text">
+          <h1 class="hero__title">Khám phá thế giới cùng <span>SkyBooking</span></h1>
+          <p class="hero__subtitle">Hàng ngàn chuyến bay giá tốt, đặt vé chỉ trong vài phút.</p>
+        </div>
+
+        <!-- Form tìm chuyến bay -->
+        <form class="search-card" action="#" method="get">
+
+          <!--
+            Mẹo CSS thuần: 2 nút radio nằm NGOÀI nhãn, ẩn đi.
+            CSS sẽ dùng :checked để đổi giao diện và ẩn/hiện ô "Ngày về"
+            mà không cần JavaScript.
+          -->
+          <input type="radio" name="trip" id="roundtrip" class="trip-radio" checked>
+          <input type="radio" name="trip" id="oneway" class="trip-radio">
+
+          <div class="trip-tabs">
+            <label for="roundtrip" class="trip-tabs__item">Khứ hồi</label>
+            <label for="oneway" class="trip-tabs__item">Một chiều</label>
+          </div>
+
+          <!-- Lưới các ô nhập liệu -->
+          <div class="form-grid">
+            <div class="field">
+              <label for="from" class="field__label">Điểm đi</label>
+              <input type="text" id="from" class="field__input" placeholder="TP. Hồ Chí Minh (SGN)">
+            </div>
+
+            <div class="field">
+              <label for="to" class="field__label">Điểm đến</label>
+              <input type="text" id="to" class="field__input" placeholder="Hà Nội (HAN)">
+            </div>
+
+            <div class="field">
+              <label for="depart" class="field__label">Ngày đi</label>
+              <input type="date" id="depart" class="field__input">
+            </div>
+
+            <!-- Ô này sẽ bị ẩn khi chọn "Một chiều" -->
+            <div class="field field--return">
+              <label for="return" class="field__label">Ngày về</label>
+              <input type="date" id="return" class="field__input">
+            </div>
+
+            <div class="field">
+              <label for="passengers" class="field__label">Hành khách</label>
+              <select id="passengers" class="field__input">
+                <option>1 người lớn</option>
+                <option>2 người lớn</option>
+                <option>3 người lớn</option>
+                <option>4 người lớn</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="class" class="field__label">Hạng ghế</label>
+              <select id="class" class="field__input">
+                <option>Phổ thông</option>
+                <option>Phổ thông đặc biệt</option>
+                <option>Thương gia</option>
+              </select>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn--primary search-card__submit">Tìm chuyến bay</button>
+        </form>
+      </div>
+    </section>
+
+      <!-- ================= ĐIỂM ĐẾN PHỔ BIẾN ================= -->
+    <section class="section" id="diem-den">
+      <div class="container">
+        <h2 class="section__title">Điểm đến phổ biến</h2>
+        <p class="section__desc">Những hành trình được yêu thích nhất trong tháng này</p>
+ 
+        <div class="destination-grid">
+          <article class="destination-card destination-card--hanoi">
+            <!-- Ảnh nền của thẻ: đổi đường dẫn src thành tên file ảnh của bạn -->
+            <img src="../image/hanoi.jpg" alt="Phố cổ Hà Nội" class="destination-card__img" loading="lazy">
+            <div class="destination-card__info">
+              <h3>Hà Nội</h3>
+              <p>Từ <strong>990.000đ</strong></p>
+            </div>
+          </article>
+ 
+          <article class="destination-card destination-card--danang">
+            <img src="../image/danang.jpg" alt="Cầu Rồng Đà Nẵng" class="destination-card__img" loading="lazy">
+            <div class="destination-card__info">
+              <h3>Đà Nẵng</h3>
+              <p>Từ <strong>790.000đ</strong></p>
+            </div>
+          </article>
+ 
+          <article class="destination-card destination-card--phuquoc">
+            <img src="../image/phuquoc.jpg" alt="Biển Phú Quốc" class="destination-card__img" loading="lazy">
+            <div class="destination-card__info">
+              <h3>Phú Quốc</h3>
+              <p>Từ <strong>850.000đ</strong></p>
+            </div>
+          </article>
+ 
+          <article class="destination-card destination-card--bangkok">
+            <img src="../image/bangkok.jpg" alt="Chùa vàng Bangkok" class="destination-card__img" loading="lazy">
+            <div class="destination-card__info">
+              <h3>Bangkok</h3>
+              <p>Từ <strong>2.490.000đ</strong></p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ƯU ĐÃI ================= -->
+    <section class="section section--gray" id="uu-dai">
+      <div class="container">
+        <h2 class="section__title">Ưu đãi hấp dẫn</h2>
+        <p class="section__desc">Đừng bỏ lỡ các chương trình khuyến mãi mới nhất</p>
+
+        <div class="deal-grid">
+          <article class="deal-card">
+            <span class="deal-card__badge">-20%</span>
+            <h3 class="deal-card__title">Mùa hè rực rỡ</h3>
+            <p class="deal-card__text">Giảm 20% cho tất cả chuyến bay nội địa khi đặt trước 30 ngày.</p>
+            <a href="../html/uudai.html#mua-he" class="deal-card__link">Xem chi tiết →</a>
+          </article>
+
+          <article class="deal-card">
+            <span class="deal-card__badge">-500K</span>
+            <h3 class="deal-card__title">Bay quốc tế</h3>
+            <p class="deal-card__text">Giảm ngay 500.000đ cho vé khứ hồi đi Đông Nam Á.</p>
+            <a href="../html/uudai.html#quoc-te" class="deal-card__link">Xem chi tiết →</a>
+          </article>
+
+          <article class="deal-card">
+            <span class="deal-card__badge">Free</span>
+            <h3 class="deal-card__title">Hành lý miễn phí</h3>
+            <p class="deal-card__text">Tặng thêm 20kg hành lý ký gửi cho thành viên mới.</p>
+            <a href="../html/uudai.html#hanh-ly" class="deal-card__link">Xem chi tiết →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= VÌ SAO CHỌN CHÚNG TÔI ================= -->
+    <section class="section" id="vi-sao">
+      <div class="container">
+        <h2 class="section__title">Vì sao chọn SkyBooking?</h2>
+        <p class="section__desc">Chúng tôi mang đến trải nghiệm đặt vé đơn giản và đáng tin cậy</p>
+
+        <div class="feature-grid">
+          <div class="feature">
+            <div class="feature__icon">💰</div>
+            <h3 class="feature__title">Giá tốt nhất</h3>
+            <p class="feature__text">So sánh giá từ hàng trăm hãng bay để bạn luôn có mức giá tốt.</p>
+          </div>
+
+          <div class="feature">
+            <div class="feature__icon">⚡</div>
+            <h3 class="feature__title">Đặt vé nhanh</h3>
+            <p class="feature__text">Chỉ 3 bước đơn giản, nhận vé điện tử ngay qua email.</p>
+          </div>
+
+          <div class="feature">
+            <div class="feature__icon">🔒</div>
+            <h3 class="feature__title">Thanh toán an toàn</h3>
+            <p class="feature__text">Bảo mật thông tin tuyệt đối với nhiều phương thức thanh toán.</p>
+          </div>
+
+          <div class="feature">
+            <div class="feature__icon">🎧</div>
+            <h3 class="feature__title">Hỗ trợ 24/7</h3>
+            <p class="feature__text">Đội ngũ tư vấn luôn sẵn sàng giúp bạn mọi lúc, mọi nơi.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ĐĂNG KÝ NHẬN TIN ================= -->
+    <section class="newsletter">
+      <div class="container newsletter__inner">
+        <div>
+          <h2 class="newsletter__title">Nhận ưu đãi mỗi tuần</h2>
+          <p class="newsletter__text">Đăng ký email để không bỏ lỡ vé giá rẻ.</p>
+        </div>
+        <form class="newsletter__form" action="#" method="post">
+          <input type="email" class="newsletter__input" placeholder="Nhập email của bạn" required>
+          <button type="submit" class="btn btn--accent">Đăng ký</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div>
+        <a href="#" class="logo logo--light">✈ Sky<span>Booking</span></a>
+        <p class="footer__text">Nền tảng đặt vé máy bay trực tuyến nhanh chóng và tiện lợi.</p>
+      </div>
+
+      <div>
+        <h4 class="footer__heading">Dịch vụ</h4>
+        <ul class="footer__list">
+          <li><a href="#">Vé máy bay</a></li>
+          <li><a href="#">Khách sạn</a></li>
+          <li><a href="#">Đưa đón sân bay</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer__heading">Hỗ trợ</h4>
+        <ul class="footer__list">
+          <li><a href="#">Trung tâm trợ giúp</a></li>
+          <li><a href="#">Chính sách hoàn vé</a></li>
+          <li><a href="#">Điều khoản sử dụng</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer__heading">Liên hệ</h4>
+        <ul class="footer__list">
+          <li>📞 1900 1234</li>
+          <li>✉ hotro@skybooking.vn</li>
+          <li>📍 TP. Hồ Chí Minh</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="footer__copy">© 2026 SkyBooking. Đây là website mẫu phục vụ học tập.</p>
+  </footer>
+
+</body>
+
+</html>
